@@ -1,5 +1,7 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
+var deploy = require('gulp-gh-pages');
+var cred = require('./credentials/credentials.js');
 var browserSync = require('browser-sync').create();
 
 gulp.task('hello', function() {
@@ -28,3 +30,10 @@ gulp.task('browserSync', function() {
 		}
 	})
 })
+
+gulp.task('deploy', function() {
+	return gulp.src('dist/**/*')
+		.pipe(deploy({
+			"remoteUrl": "https://" + cred.username + ":" + cred.personalToken + "@github.com/maabrown/personal_site.git"
+		}))
+});

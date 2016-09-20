@@ -1,0 +1,33 @@
+.name-row div {
+  display: inline-block; }
+  .name-row div h1 {
+    font-size: 83px; }
+  .name-row div li {
+    list-style-type: none;
+    text-align: left; }
+
+.name-row:nth-child(2) {
+  vertical-align: super; }
+
+.name-row {
+  text-align: center;
+  padding: 10% 0; }
+
+.jumbotron {
+  height: 700px;
+  margin-bottom: 0; }
+
+.bio-header {
+  height: 400px;
+  background-color: blue; }
+  .bio-header h1 {
+    font-size: 70px;
+    text-align: center;
+    padding: 7% 0; }
+
+.bio-pics {
+  padding-top: 60px;
+  text-align: center; }
+  .bio-pics img {
+    padding-left: 25px;
+    padding-bottom: 60px; }

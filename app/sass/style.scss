@@ -1,16 +1,40 @@
+$pink: #d179a3;
+$black-background: #4b4b4b;
+$bottom-space: 80px;
+$link-hover: #A2698D;
+
+body {
+	font-family: 'Raleway', sans-serif;
+}
+
 .name-row div {
 	display: inline-block;
 	h1 {
 		font-size: 83px;
+		display: inline-block;
+		font-weight: 300;
 	}
 	li {
 		list-style-type: none;
 		text-align: left;
 	}
+	ul {
+		padding-left: 10px;
+	}
+	a {
+		color: black;
+		&:hover {
+			color: $link-hover;
+		}
+	}
 }
 
-.name-row:nth-child(2) {
+.name-ul {
 	vertical-align: super;
+}
+
+.name-last-name {
+	color: $pink !important;
 }
 
 .name-row {
@@ -21,15 +45,18 @@
 .jumbotron {
 	height: 700px;
 	margin-bottom: 0;
+	background-color: white;
 }
 
 .bio-header {
 	height: 400px;
-	background-color: blue;
+	background-color: $black-background;
 	h1 {
 		font-size: 70px;
 		text-align: center;
-		padding: 7% 0;
+		padding: 8% 0;
+		color: $pink;
+		letter-spacing: 50px;
 	}
 }
 
@@ -38,6 +65,58 @@
 	text-align: center;
 	img {
 		padding-left: 25px;
-		padding-bottom: 60px;
+		padding-bottom: $bottom-space;
 	}
+}
+
+.bio-text {
+	padding-bottom: $bottom-space;
+}
+
+.work-header {
+	height: 400px;
+	background-color: $black-background;
+	h1 {
+		font-size: 70px;
+		text-align: center;
+		padding: 7% 0;
+		color: $pink;
+		letter-spacing: 50px;
+	}
+}
+
+.work-content {
+	text-align: center;
+	padding-bottom: $bottom-space;
+	img {
+		padding-left: 25px;
+		padding-bottom: 20px;
+		padding-top: 60px;
+		text-align: center;
+	}
+}
+
+.contact-header {
+	height: 400px;
+	background-color: $black-background;
+	h1 {
+		font-size: 70px;
+		text-align: center;
+		padding: 7% 0;
+		color: $pink;
+		letter-spacing: 50px;
+	}
+}
+
+.contact-content {
+	padding-bottom: $bottom-space;
+	padding-top: 40px;
+	a {
+		color: black;
+		
+		&:hover {
+			color: $link-hover;
+		}
+	}
+
 }

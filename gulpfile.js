@@ -9,6 +9,7 @@ var cleanCSS = require('gulp-clean-css');
 var uglify = require('gulp-uglify');
 var del = require('del');
 var runSequence = require('run-sequence');
+var sourcemaps = require('gulp-sourcemaps');
 
 gulp.task('sass', function() {
 	return gulp.src('app/sass/**/*.scss')
@@ -43,13 +44,15 @@ gulp.task('deploy', function() {
 gulp.task('useref', function() {
 	return gulp.src('app/*.html')
 		.pipe(useref())
-		.pipe(gulpIf('*.js', uglify()))
-		.pipe(gulpIf('*.css', cleanCSS()))
+		.pipe(sourcemaps.init())
+			.pipe(gulpIf('*.js', uglify()))
+			.pipe(gulpIf('*.css', cleanCSS()))
+		.pipe(sourcemaps.write())
 		.pipe(gulp.dest('dist'))
 });
 
 gulp.task('clean:dist', function() {
-	return del.sync('dist');
+	return del.sync(['dist/**', '!dist']);
 });
 
 gulp.task('build', function(callback) {

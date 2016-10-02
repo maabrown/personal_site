@@ -71,6 +71,16 @@ body {
     padding-top: 60px;
     text-align: center; }
 
+.public-engagement-header {
+  height: 400px;
+  background-color: #4b4b4b; }
+  .public-engagement-header h1 {
+    font-size: 70px;
+    text-align: center;
+    padding: 7% 0;
+    color: #d179a3;
+    letter-spacing: 50px; }
+
 .contact-header {
   height: 400px;
   background-color: #4b4b4b; }

@@ -81,9 +81,19 @@ body {
     color: #d179a3;
     letter-spacing: 50px; }
 
+.public-engagement-content {
+  padding-bottom: 80px; }
+  .public-engagement-content h3 {
+    color: black; }
+  .public-engagement-content table {
+    margin-top: 3em; }
+    .public-engagement-content table td, .public-engagement-content table th {
+      padding: 1em; }
+
 .contact-header {
   height: 400px;
-  background-color: #4b4b4b; }
+  background-color: #4b4b4b;
+  text-align: center; }
   .contact-header h1 {
     font-size: 70px;
     text-align: center;
@@ -98,3 +108,15 @@ body {
     color: black; }
     .contact-content a:hover {
       color: #A2698D; }
+  .contact-content .email-address-div {
+    text-align: center; }
+  .contact-content .social-media-div {
+    margin-top: 3em; }
+    .contact-content .social-media-div a {
+      display: inline-block;
+      width: 33%; }
+      .contact-content .social-media-div a h3 {
+        display: inline-block;
+        margin-left: .5em; }
+      .contact-content .social-media-div a i {
+        color: #d179a3; }

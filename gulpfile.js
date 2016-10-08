@@ -10,7 +10,7 @@ var uglify = require('gulp-uglify');
 var del = require('del');
 var runSequence = require('run-sequence');
 var sourcemaps = require('gulp-sourcemaps');
-var imagemin = require('guplp-imagemin');
+var imagemin = require('gulp-imagemin');
 
 gulp.task('sass', function() {
 	return gulp.src('app/sass/**/*.scss')

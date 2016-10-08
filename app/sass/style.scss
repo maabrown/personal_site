@@ -66,7 +66,16 @@ body {
 	img {
 		padding-left: 25px;
 		padding-bottom: $bottom-space;
+		height: 300px;
+		width: 300px;
+		-webkit-filter: grayscale(100%);
+    	filter: grayscale(45%);
+    	&:hover {
+    		-webkit-filter: grayscale(0%);
+    		filter: grayscale(0%);
+    	}
 	}
+
 }
 
 .bio-text {
@@ -89,10 +98,15 @@ body {
 	text-align: center;
 	padding-bottom: $bottom-space;
 	img {
-		padding-left: 25px;
-		padding-bottom: 20px;
-		padding-top: 60px;
+		margin-left: 25px;
+		margin-bottom: 20px;
+		margin-top: 60px;
 		text-align: center;
+		height: 14em;
+		width: 18em;
+		border: 2px solid black;
+		border-radius: 10px;
+
 	}
 }
 
@@ -153,7 +167,7 @@ body {
 		margin-top: 3em;
 		a {
 			display: inline-block;
-			width: 33%;
+			width: 32%;
 			h3 {
 				display: inline-block;
 				margin-left: .5em;
@@ -164,4 +178,15 @@ body {
 		}
 	}
 
+	img {
+		height: 14em;
+		width: 14em;
+		-webkit-filter: grayscale(100%);
+    	filter: grayscale(45%);
+    	border-radius: 10px;
+    	&:hover {
+    		-webkit-filter: grayscale(0%);
+    		filter: grayscale(0%);
+    	}
+	}
 }

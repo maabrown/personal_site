@@ -47,7 +47,14 @@ body {
   text-align: center; }
   .bio-pics img {
     padding-left: 25px;
-    padding-bottom: 80px; }
+    padding-bottom: 80px;
+    height: 300px;
+    width: 300px;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(45%); }
+    .bio-pics img:hover {
+      -webkit-filter: grayscale(0%);
+      filter: grayscale(0%); }
 
 .bio-text {
   padding-bottom: 80px; }
@@ -66,10 +73,14 @@ body {
   text-align: center;
   padding-bottom: 80px; }
   .work-content img {
-    padding-left: 25px;
-    padding-bottom: 20px;
-    padding-top: 60px;
-    text-align: center; }
+    margin-left: 25px;
+    margin-bottom: 20px;
+    margin-top: 60px;
+    text-align: center;
+    height: 14em;
+    width: 18em;
+    border: 2px solid black;
+    border-radius: 10px; }
 
 .public-engagement-header {
   height: 400px;
@@ -114,9 +125,18 @@ body {
     margin-top: 3em; }
     .contact-content .social-media-div a {
       display: inline-block;
-      width: 33%; }
+      width: 32%; }
       .contact-content .social-media-div a h3 {
         display: inline-block;
         margin-left: .5em; }
       .contact-content .social-media-div a i {
         color: #d179a3; }
+  .contact-content img {
+    height: 14em;
+    width: 14em;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(45%);
+    border-radius: 10px; }
+    .contact-content img:hover {
+      -webkit-filter: grayscale(0%);
+      filter: grayscale(0%); }

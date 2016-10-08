@@ -64,7 +64,7 @@ gulp.task('useref', function() {
 gulp.task('images', function() {
 	return gulp.src('app/img/*')
 		.pipe(imagemin())
-		.pipe(gulp.dest('dist/images'))
+		.pipe(gulp.dest('dist/img'))
 })
 
 gulp.task('clean:dist', function() {
@@ -73,7 +73,8 @@ gulp.task('clean:dist', function() {
 
 gulp.task('build', function(callback) {
 	runSequence('clean:dist',
-		['sass', 'useref', 'images'],
+			'sass',
+		['useref', 'images'],
 		callback
 	)
 });

@@ -10,6 +10,7 @@ var uglify = require('gulp-uglify');
 var del = require('del');
 var runSequence = require('run-sequence');
 var sourcemaps = require('gulp-sourcemaps');
+var imagemin = require('guplp-imagemin');
 
 gulp.task('sass', function() {
 	return gulp.src('app/sass/**/*.scss')
@@ -51,13 +52,19 @@ gulp.task('useref', function() {
 		.pipe(gulp.dest('dist'))
 });
 
+gulp.task('images', function() {
+	return gulp.src('app/img/*')
+		.pipe(imagemin())
+		.pipe(gulp.dest('dist/images'))
+})
+
 gulp.task('clean:dist', function() {
 	return del.sync(['dist/**', '!dist']);
 });
 
 gulp.task('build', function(callback) {
 	runSequence('clean:dist',
-		['sass', 'useref'],
+		['sass', 'useref', 'images'],
 		callback
 	)
 });

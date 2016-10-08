@@ -11,6 +11,7 @@ var del = require('del');
 var runSequence = require('run-sequence');
 var sourcemaps = require('gulp-sourcemaps');
 var imagemin = require('gulp-imagemin');
+var lazypipe = require('lazypipe');
 
 gulp.task('sass', function() {
 	return gulp.src('app/sass/**/*.scss')
@@ -44,11 +45,19 @@ gulp.task('deploy', function() {
 
 gulp.task('useref', function() {
 	return gulp.src('app/*.html')
-		.pipe(useref())
-		.pipe(sourcemaps.init())
-			.pipe(gulpIf('*.js', uglify()))
-			.pipe(gulpIf('*.css', cleanCSS()))
-		.pipe(sourcemaps.write())
+		.pipe(useref({}, lazypipe()
+							.pipe(sourcemaps.init, { loadMaps: true})
+							.pipe(function() {
+								return gulpIf('*.js', uglify())
+							})
+							.pipe(function() {
+								return gulpIf('*.css', cleanCSS())
+							})
+							))
+		// .pipe(sourcemaps.init())
+		// 	.pipe()
+		// 	.pipe()
+		.pipe(sourcemaps.write('maps'))
 		.pipe(gulp.dest('dist'))
 });
 
